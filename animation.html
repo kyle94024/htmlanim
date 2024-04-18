@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello, world!</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!-- <link rel="icon" href="favicon.png"> -->
+  <script src="transition.js"></script>
+  <script src="video.js"></script>
+  <script src="selectChar.js"></script>
+  <script src="snake.js"></script>
+</head>
+<body>
+  <nav style = "background-color: white; padding-top: 0%; height: 0px;">
+    <ul id = "HeaderBar" style="display: flex; justify-content: space-around; background-color: rgba(232, 146, 232, 0.812); height: 100px; width: 100%; position: fixed; top: 0; left: 0; transition-duration: 200ms, 100ms; border-style: solid; border-width: 10px; border-color: rgb(246, 168, 247,1);">
+      <button onclick="playAudio()" 
+      style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color: lavender; border: 2px solid black; width: 200px; height: 70px; font-size: 30px; text-align: center; line-height: 60px; padding-top: 5px; margin-top: 15px;" 
+      onmouseover="this.style.backgroundColor='rgb(224,215,250)'"
+      onmouseout="this.style.backgroundColor='lavender'"
+      onmousedown="this.style.backgroundColor='rgb(193,182,227)'"
+      onmouseup="this.style.backgroundColor='rgb(224,215,250)'"
+      >Empyrean</button>
+      <button onclick="changeAudioTime(-5)"
+      style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color: lavender; border: 2px solid black; width: 200px; height: 70px; font-size: 30px; text-align: center; line-height: 60px; padding-top: 5px; margin-top: 15px;"
+      onmouseover="this.style.backgroundColor='rgb(224,215,250)'"
+      onmouseout="this.style.backgroundColor='lavender'"
+      onmousedown="this.style.backgroundColor='rgb(193,182,227)'"
+      onmouseup="this.style.backgroundColor='rgb(224,215,250)'"
+      >Run It Back</button>
+      <button onclick="changeAudioTime(5)"
+      style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; background-color: lavender; border: 2px solid black; width: 200px; height: 70px; font-size: 30px; text-align: center; line-height: 60px; padding-top: 5px; margin-top: 15px;"
+      onmouseover="this.style.backgroundColor='rgb(224,215,250)'"
+      onmouseout="this.style.backgroundColor='lavender'"
+      onmousedown="this.style.backgroundColor='rgb(193,182,227)'"
+      onmouseup="this.style.backgroundColor='rgb(224,215,250)'"
+      >Fast Forward</button>
+    </ul>
+  </nav>
+  <!-- Audio element -->
+  <audio id="myAudio" src="Empyrean Stairway.mp3" preload="auto"></audio>
+
+  <div id="currentTime" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 100px; color: rgb(246, 168, 247,1);">0</h1>
+  </div>
+
+  <div id="currentPos" style="display: flex; justify-content: center; align-items: center; height: 100vh; left: 100px; bottom: 0px; position: absolute; ">
+    <h1 id ="currentX" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 100px; color: rgb(246, 168, 247,1); bottom: 50px; position: inherit;">x</h1>
+    <h1 id ="currentY" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 100px; color: rgb(246, 168, 247,1); bottom: -50px; position: inherit;">y</h1>
+  </div>
+
+  <!-- JavaScript to handle audio playback -->
+  <script>
+    function playAudio() {
+      var audio = document.getElementById("myAudio");
+
+      // Check if the audio is paused, if so, play it
+      if (audio.paused) {
+        audio.play();
+      } else {
+        // If it's already playing, pause it
+        audio.pause();
+        // You can also use audio.currentTime = 0; to restart the audio from the beginning
+      }
+    }
+  </script>
+
+  <style>
+    nav {
+      background-color: rgba(232, 136, 232, 0.912);
+      height: 100px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  
+  
+  <script src="app.js"></script>
+
+  <!-- SNAKE GAME ___________________________________________________________________________________________ -->
+  <canvas id="snakeCanvas" width="1500" height="750" style="background-color: rgb(255, 255, 255); position: absolute; z-index: -10; top: 0px; left: 0px;"></canvas>
+  <script src="snake.js"></script>
+
+  <div id="apples" style="position: absolute; z-index: -9; bottom: 0px; left: 45%;">
+    <h1 id="applesReq" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 100px; color: rgb(255, 95, 74); bottom: -50px; position: inherit;">0/3</h1>
+
+  </div>
+
+
+
+
+
+
+
+
+</body>
+</html></nav>
